@@ -12,19 +12,19 @@ Hi Slidely team, this repository contains my code for the express backend part o
 + Language: Typescript
 + Database: db.json file
     + Basic Structure:
-      ```
-      {
-  "metadata": {
+```
+{
+"metadata": {
     "submission_cnt": 0,
     "deleted_cnt": 0
   },
   "data": []
 }
-      ```
+```
     + "data" cotains list of records in JSON.
     + A record is stored with following fields:
-      ```
-      {
+```json
+{
   "NameProp": "Saina Nehwal",
   "EmailProp": "sn@gmail.com",
   "PhoneNumProp": "7854785478",
@@ -34,7 +34,7 @@ Hi Slidely team, this repository contains my code for the express backend part o
   "StopwatchHrsProp": "0",
   "insertionIdx": 2
 }
-      ```
+```
       
 ## How to Run
 - Clone this github repository using the https url: https://github.com/RoSh-23/RohanShah_SlidelyAI_Task_Backend_Express_Code.git
