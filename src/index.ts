@@ -336,7 +336,6 @@ app.put('/submission', (req: Request, res: Response) => {
                         }
                         else
                         { 
-                            console.log(typeof(dbFileJson["data"][indexNumb]));
                             dbFileJson["data"][indexNumb].NameProp = postInptData["NameProp"];
                             dbFileJson["data"][indexNumb].EmailProp = postInptData["EmailProp"];
                             dbFileJson["data"][indexNumb].PhoneNumProp = postInptData["PhoneNumProp"];
