@@ -12,7 +12,43 @@ app.get('/ping', (req: Request, res: Response) => {
 
 app.post('/submit', (req: Request, res: Response) => {
     // get the request body
-    const postInptData = req.body;
+    let postInptData = req.body;
+    /* 
+        process to convert a json with the fields 
+        "name", "email", "phone", "github_link", "stopwatch_time" in the internal format
+        No need to do if data is already in the internal format -- as coming from WinForms app 
+    */
+    try
+    {
+        if(postInptData.hasOwnProperty("name") == true && postInptData.hasOwnProperty("email") == true && postInptData.hasOwnProperty("phone") && postInptData.hasOwnProperty("github_link") && postInptData.hasOwnProperty("stopwatch_time"))
+        {
+            const correctformatObj = {
+                "NameProp" : "",
+                "EmailProp" : "",
+                "PhoneNumProp": "",
+                "GithubLinkProp": "",
+                "StopwatchSecProp": "",
+                "StopwatchMinProp": "",
+                "StopwatchHrsProp": ""
+            };
+            correctformatObj.NameProp = postInptData.name;
+            correctformatObj.EmailProp = postInptData.email;
+            correctformatObj.PhoneNumProp = postInptData.phone;
+            correctformatObj.GithubLinkProp = postInptData.github_link;
+            correctformatObj.StopwatchSecProp = postInptData.stopwatch_time.substring(0, 2);
+            correctformatObj.StopwatchMinProp = postInptData.stopwatch_time.substring(3, 5);
+            correctformatObj.StopwatchHrsProp = postInptData.stopwatch_time.substring(6, 8);
+
+            postInptData = correctformatObj;
+            console.log(postInptData);
+        }
+   }
+   catch (e)
+   {
+        console.log("error in object conversion or bad request");
+        console.error(e);
+   }
+    
     fs.readFile('././db.json', 'utf8', (err, fileData) => { // reading the json file
         if (err)
         {
