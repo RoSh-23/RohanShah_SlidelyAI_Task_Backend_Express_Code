@@ -12,7 +12,7 @@ Hi Slidely team, this repository contains my code for the express backend part o
 + Language: Typescript
 + Database: db.json file
     + Basic Structure:
-```
+```json
 {
 "metadata": {
     "submission_cnt": 0,
@@ -21,8 +21,8 @@ Hi Slidely team, this repository contains my code for the express backend part o
   "data": []
 }
 ```
-    + "data" cotains list of records in JSON.
-    + A record is stored with following fields:
++ "data" contains list of records in JSON.
++ A record is stored with following fields:
 ```json
 {
   "NameProp": "Saina Nehwal",
@@ -54,6 +54,6 @@ Hi Slidely team, this repository contains my code for the express backend part o
 2. All the code is in: src/index.ts file
 3. The server HAS NOT been hosted, runs fine on the localhost, winforms frontend has urls for port 3000.
 4. A Curl request of following form runs correctly to enter the data:
-```
+```curl
 curl -X POST http://localhost:3000/submit -H "Content-Type: application/json" --data "{\"name\":\"Object\", \"email\":\"s@g.com\", \"phone\":\"7854785478\", \"github_link\":\"https://github.com/\", \"stopwatch_time\":\"00:13:24\"}"
 ```
