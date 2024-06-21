@@ -51,7 +51,7 @@ Hi Slidely team, this repository contains my code for the express backend part o
     + The current db.json file contains some dummy data.
     + If you want to do a clean start simply empty the file (remove everything).
     + You are NOT required to create the basic structure if you empty the file, it will be created on the first submission.
-2. All the code is in: src/index.ts file
+2. All the endoint code is in: src/index.ts file
 3. The server HAS NOT been hosted, runs fine on the localhost, winforms frontend has urls for port 3000.
 4. A Curl request of following form runs correctly to enter the data:
 ```
