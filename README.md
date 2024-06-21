@@ -32,22 +32,5 @@ Hi Slidely team, this repository contains my code for the express backend part o
     + You are NOT required to create the basic structure if you empty the file, it will be created on the first submission.
 2. All the code is in: src/index.ts file
 3. The server HAS NOT been hosted, runs fine on the localhost.
-
-## Description/Features
-1. Endpoints:
-    + Required:
-        + /ping [GET]
-        + /submit [POST]
-        + /read [GET]
-    + Others:
-        + /readMetadata [GET]
-        + /submission [DELETE, PUT]  
-3. Features:
-    + Compulsory:
-        - View submissions
-        - Create new submission
-        - stopwatch toggle and not reset
-        - shortcuts
-    + Optional:
-        - edit submission
-        - delete submission
+4. A Curl request of following form runs correctly to enter the data:
+   curl -X POST http://localhost:3000/submit -H "Content-Type: application/json" --data "{\"name\":\"Object\", \"email\":\"s@g.com\", \"phone\":\"7854785478\", \"github_link\":\"https://github.com/\", \"stopwatch_time\":\"00:13:24\"}"
