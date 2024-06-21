@@ -6,34 +6,43 @@
 + Email: shah_rohan2001@yahoo.com
 
 ## About
-Hi Slidely team, this repository contains my code for the WinForms part of the task 2.
+Hi Slidely team, this repository contains my code for the express backend part of the task 2.
 
 ## Technical Description
-+ Language: VB.NET
-+ Packages: Newtonsoft.Json version=13.0.3
-+ Tool: Visual Studio - 2019 Version
-+ .NET Version: 4.5
++ Language: Typescript
++ Database: db.json file
+    + Basic Structure: {"metadata":{"submission_cnt":0,"deleted_cnt":0},"data":[]}
+    + "data" cotains list of records in JSON.
+    + A record is stored with following fields:{"NameProp":"Saina Nehwal","EmailProp":"sn@gmail.com","PhoneNumProp":"7854785478","GithubLinkProp":"https://github.com/RoSh-23","StopwatchSecProp":"18","StopwatchMinProp":"0","StopwatchHrsProp":"0","insertionIdx":2}
 
 ## How to Run
-- Go to Visual Studio
-- Click on Clone a Repository
-    - Enter the https url of this repo: https://github.com/RoSh-23/SlidelyAI_Task2_Winforms_Code.git
-- Install the Newtonsoft.json package if required
-- Run the Slidely_AI_Task_2_Google_Forms.sln solution file
+- Clone this github repository using the https url: https://github.com/RoSh-23/RohanShah_SlidelyAI_Task_Backend_Express_Code.git
+- Navigate to the folder where the github repo has been cloned.
+- On the command line execute the following command:
+    -  npm i
+- Then to start the server in Debug mode -- changes are automatically detected run:
+    - npm run dev
+- Else to run the server without debug mode -- changes not automatically detected run:
+    - npm start 
 
 ## Points to remember
-1. In the submission form for new records some fields are being validated using regexes, you will be prompted when entering invalid data regarding the valid format but still explaining here:
-    - Name: not longer than 60 characters
-    - Email: valid email format, follow the regex "^[A-Z0-9._%+-]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$"
-    - Phone Num: Indian mobile numbers, starting from 6,7,8,9 and 10 digit long.
-    - Github Link: Should start with https://github.com/
-2. All the keyboard shortcuts work.
-3. When using CTRL + T for toggling the stopwatch, a bell sound comes which I was not able to remove, but it still works.
-4. Editable fields are name, email, phone num and github link, the stopwatch time is not editable.
+1. Regarding db.json
+    + The current db.json file contains some dummy data.
+    + If you want to do a clean start simply empty the file (remove everything).
+    + You are NOT required to create the basic structure if you empty the file, it will be created on the first submission.
+2. All the code is in: src/index.ts file
+3. The server HAS NOT been hosted, runs fine on the localhost.
 
 ## Description/Features
-1. Tried to use exception handling as and when required.
-2. Features:
+1. Endpoints:
+    + Required:
+        + /ping [GET]
+        + /submit [POST]
+        + /read [GET]
+    + Others:
+        + /readMetadata [GET]
+        + /submission [DELETE, PUT]  
+3. Features:
     + Compulsory:
         - View submissions
         - Create new submission
@@ -42,8 +51,3 @@ Hi Slidely team, this repository contains my code for the WinForms part of the t
     + Optional:
         - edit submission
         - delete submission
-
-## Screenshots
-![First Window](assets/images/S1.png)
-![Form View Window](assets/images/S2.png)
-![Create New Form Window](assets/images/S3.png)
