@@ -38,9 +38,7 @@ app.post('/submit', (req: Request, res: Response) => {
             correctformatObj.StopwatchSecProp = postInptData.stopwatch_time.substring(0, 2);
             correctformatObj.StopwatchMinProp = postInptData.stopwatch_time.substring(3, 5);
             correctformatObj.StopwatchHrsProp = postInptData.stopwatch_time.substring(6, 8);
-
             postInptData = correctformatObj;
-            console.log(postInptData);
         }
    }
    catch (e)
